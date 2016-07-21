@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <!-- Standard Meta -->
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+  <!-- Site Properities -->
+  <title>Minionize the world</title>
+
+  <link rel="stylesheet" type="text/css" href="../static/css/semantic.css" th:href="@{css/semantic.min.css}"></link>
+  <link rel="stylesheet" type="text/css" href="../static/css/dropdown.css" th:href="@{css/dropdown.min.css}"></link>
+  <link rel="stylesheet" type="text/css" href="../static/css/homepage.css" th:href="@{css/homepage.css}"></link>
+
+  <script src="../static/js/jquery.js" th:src="@{js/jquery.js}"></script>
+  <script src="../static/js/semantic.js" th:src="@{js/semantic.min.js}"></script>
+  <script src="../static/js/dropdown.js" th:src="@{js/dropdown.min.js}"></script>
+  <script src="../static/js/homepage.js" th:src="@{js/homepage.js}"></script>
+
+</head>
+<body id="home">
+  <div class="ui menu inverted ">
+    <a class="header item" href="http://minion.front.machine:8080">
+      Home
+    </a>
+    <a class="item" href="http://minion.eureka.machine:8761" target="eureka">
+      Eureka
+    </a>
+    
+    
+    <div class="ui item dropdown"> 
+      Config-Server <i class="dropdown icon"></i>
+      <div class="ui menu inverted">
+
+      <a class="item" href="https://github.com/ehdez73/minionize-the-world-config" target="github">
+        GitHub configuration repository
+      </a>
+      
+	    <a class="item" href="http://minion.config.machine:8888/minion-front/master" target="config">
+	      minion-front config (default)
+	    </a>
+	    
+	    <a class="item" href="http://minion.config.machine:8888/minion-front/prod/master" target="config">
+	      minion-front config (prod)
+	    </a>
+	    
+	    <a class="item" id="refresh" href="#" target="hystrix">
+          Refresh 
+        </a>
+      </div>
+    </div>
+    
+    
+    
+    <div class="ui item dropdown"> 
+      Hystrix <i class="dropdown icon"></i>
+      <div class="ui menu inverted">
+        <a class="item" href="http://minion.front.machine:8080/dashboard" target="hystrix">
+          Dashboard
+        </a>
+        <a class="item" href="http://minion.front.machine:8080/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8080%2Fhystrix.stream" target="hystrix">
+          Hystrix
+        </a>
+      </div>
+    </div>
+
+    <div class="right menu">
+      <a class="header item" href="http://minion.ipsum.machine:8880/minion-ipsum" target="ipsum">
+        Minion-Ipsum
+      </a>
+      <a class="item" href="http://minion.characters.machine:8881/minion-character" target="characters">
+        Minion-Characters
+      </a>
+    </div>
+  </div>
+  
+  <div class="ui inverted masthead segment">
+
+
+	<div class="ui page grid">
+      <div class="column">
+        <h1 class="ui inverted header" th:text="${title}">Minionize the World !!!</h1>
+        <img id="minion-image" src="../static/img/minion-carl.png" alt="Carl" th:src="${minionImage}" th:alt="${minionName}"  class="ui medium image" />
+        
+        
+        <div class="ui transition information visible" style="">
+	        <h2 th:text="${minionName}" id="minion-name">Carl</h2>
+        </div>
+        
+      </div>
+    </div>
+   </div>
+  
+    <div class="ui vertical segment">
+    <div class="ui stackable aligned page grid two column">
+        	<div class="column">
+		        <p th:utext="${minionIpsum}" class="lead" id="ipsum">
+		            Minions ipsum uuuhhh baboiii daa bee do bee do bee do tank yuuu! Me want bananaaa! La bodaaa. Bananaaaa hahaha wiiiii gelatooo. Bappleees daa tatata bala tu ti aamoo! Daa bee do bee do bee do aaaaaah daa. Chasy chasy tulaliloo baboiii wiiiii po kass tank yuuu! Uuuhhh. Belloo! chasy bananaaaa aaaaaah ti aamoo! Daa.
+		        </p>
+	    	</div>      
+        	<div class="column">
+	        	<div class="primary ui button" >Banana !!!</div>
+        	</div>
+        
+      
+    </div>
+  </div>
+
+
+ <div class="ui modal">
+	  <i class="close icon"></i>
+	  <div class="header">
+	    Configuration refreshed
+	  </div>
+	  <div class="content">
+	    <div class="description">
+	      Now try to reload the page. 
+	    </div>
+	  </div>
+	</div>
+  
+
+
+
+</body></html>

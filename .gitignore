@@ -1,0 +1,10 @@
+.metadata
+.classpath
+.settings
+.project
+.springBeans
+target
+build
+.gradle
+.DS_Store
+*.swp

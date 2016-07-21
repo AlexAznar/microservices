@@ -1,0 +1,10 @@
+info:
+  description: Minionize the world (FRONT)
+
+zuul:
+  routes:
+    minion-ipsum: /api/ipsum/**
+    minion-characters: /api/characters/**
+
+logging:
+  level.org.springframework.cloud: DEBUG
